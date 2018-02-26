@@ -9,7 +9,7 @@ export PATH
 clear
 echo
 echo "#############################################################"
-echo "# One click Install ShadowsocksR Server                     #"
+echo "# ShadowsocksR一键安装脚本                                 #"
 echo "# Github: https://github.com/youchanlee/ssr                 #"
 echo "#############################################################"
 echo
