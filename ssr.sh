@@ -6,7 +6,6 @@ export PATH
 #   Description: One click Install ShadowsocksR Server            #
 #   Intro:  https://github.com/youchanlee/ssr                     #
 #=================================================================#
-
 clear
 echo
 echo "#############################################################"
@@ -189,8 +188,8 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: P080nb3m8Gg):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="P080nb3m8Gg"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -302,7 +301,7 @@ pre_install(){
     done
 
     echo
-    echo "Press any key to start...or Press Ctrl+C to cancel"
+    echo "配置完成，按任意键开始安装或者按Ctrl+C取消安装"
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
@@ -427,7 +426,7 @@ install(){
 
         clear
         echo
-        echo -e "Congratulations, ShadowsocksR server install completed!"
+        echo -e "安装完成，SSR信息如下:"
         echo -e "Your Server IP        : \033[41;37m $(get_ip) \033[0m"
         echo -e "Your Server Port      : \033[41;37m ${shadowsocksport} \033[0m"
         echo -e "Your Password         : \033[41;37m ${shadowsockspwd} \033[0m"
@@ -435,11 +434,9 @@ install(){
         echo -e "Your obfs             : \033[41;37m ${shadowsockobfs} \033[0m"
         echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
         echo
-        echo "Welcome to visit:https://github.com/youchanlee/ssr"
-        echo "Enjoy it!"
         echo
     else
-        echo "ShadowsocksR install failed, please Email to Teddysun <i@teddysun.com> and contact"
+        echo "ShadowsocksR 安装失败"
         install_cleanup
         exit 1
     fi
