@@ -2,10 +2,8 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #=================================================================#
-#   System Required:  CentOS 6,7, Debian, Ubuntu                  #
-#   Description: One click Install ShadowsocksR Server            #
-#   Author: nobody                                                #
-#   Thanks:                                                       #
+#   系统需求:  CentOS 6,7, Debian, Ubuntu                         #
+#   介绍: SSR一键安装脚本                                         #
 #=================================================================#
 
 clear
@@ -192,8 +190,8 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: P080nb3m8Gg):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="P080nb3m8Gg"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -438,7 +436,7 @@ install(){
         echo -e "Your obfs             : \033[41;37m ${shadowsockobfs} \033[0m"
         echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
         echo
-        echo "Welcome to visit:https://shadowsocks.be/9.html"
+        echo "Welcome to visit:https://github.com/youchanlee/ssr"
         echo "Enjoy it!"
         echo
     else
