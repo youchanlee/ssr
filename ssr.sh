@@ -4,7 +4,7 @@ export PATH
 #=================================================================#
 #   系统需求:  CentOS 6,7, Debian, Ubuntu                  #
 #   描述:   ShadowsocksR 服务器一键端            #
-#   作者: Nobody                             #
+
 #                           #
 #=================================================================#
 
@@ -12,9 +12,9 @@ clear
 echo
 echo "#############################################################"
 echo "# ShadowsocksR 服务器一键端                     #"
-echo "# Intro: https://shadowsocks.be/9.html                      #"
+echo "# Intro: https://github.com/youchanlee/ssr                      #"
 echo "#                          #"
-echo "# Github: https://github.com/shadowsocksr/shadowsocksr      #"
+echo "# Github: https://github.com/youchanlee/ssr      #"
 echo "#############################################################"
 echo
 
@@ -305,7 +305,7 @@ pre_install(){
     done
 
     echo
-    echo "Press any key to start...or Press Ctrl+C to cancel"
+    echo "按任意键开始安装，按Ctrl+C取消安装"
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
@@ -325,7 +325,7 @@ download_files(){
         exit 1
     fi
     # Download ShadowsocksR file
-    if ! wget --no-check-certificate -O shadowsocksr-3.2.1.tar.gz https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.1.tar.gz; then
+    if ! wget --no-check-certificate -O shadowsocksr-3.2.1.tar.gz https://github.com/youchanlee/ssr/blob/master/shadowsocksr-3.2.1.tar.gz; then
         echo -e "[${red}Error${plain}] Failed to download ShadowsocksR file!"
         exit 1
     fi
@@ -441,7 +441,7 @@ install(){
         
         echo
     else
-        echo "ShadowsocksR install failed, please Email to Teddysun <i@teddysun.com> and contact"
+        echo "ShadowsocksR 安装失败"
         install_cleanup
         exit 1
     fi
