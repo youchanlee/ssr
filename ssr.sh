@@ -219,7 +219,7 @@ pre_install(){
     # Set shadowsocksR config stream ciphers
     while true
     do
-    echo -e "Please select stream cipher for ShadowsocksR:"
+    echo -e "请选择数据流加密方式:"
     for ((i=1;i<=${#ciphers[@]};i++ )); do
         hint="${ciphers[$i-1]}"
         echo -e "${green}${i}${plain}) ${hint}"
