@@ -187,7 +187,7 @@ pre_install(){
         exit 1
     fi
     # Set ShadowsocksR config password
-    echo "Please enter password for ShadowsocksR:"
+    echo "请设置密码:"
     read -p "(Default password: P080nb3m8Gg):" shadowsockspwd
     [ -z "${shadowsockspwd}" ] && shadowsockspwd="P080nb3m8Gg"
     echo
@@ -199,7 +199,7 @@ pre_install(){
     while true
     do
     dport=$(shuf -i 9000-19999 -n 1)
-    echo -e "Please enter a port for ShadowsocksR [1-65535]"
+    echo -e "请选择端口 [1-65535]"
     read -p "(Default port: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
@@ -213,7 +213,7 @@ pre_install(){
             break
         fi
     fi
-    echo -e "[${red}Error${plain}] Please enter a correct number [1-65535]"
+    echo -e "[${red}Error${plain}] 请输入一个正确的数字 [1-65535]"
     done
 
     # Set shadowsocksR config stream ciphers
@@ -247,7 +247,7 @@ pre_install(){
     # Set shadowsocksR config protocol
     while true
     do
-    echo -e "Please select protocol for ShadowsocksR:"
+    echo -e "请选择协议（Protocol）:"
     for ((i=1;i<=${#protocols[@]};i++ )); do
         hint="${protocols[$i-1]}"
         echo -e "${green}${i}${plain}) ${hint}"
@@ -275,7 +275,7 @@ pre_install(){
     # Set shadowsocksR config obfs
     while true
     do
-    echo -e "Please select obfs for ShadowsocksR:"
+    echo -e "请选择混淆协议（obfs）:"
     for ((i=1;i<=${#obfs[@]};i++ )); do
         hint="${obfs[$i-1]}"
         echo -e "${green}${i}${plain}) ${hint}"
