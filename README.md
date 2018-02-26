@@ -4,7 +4,7 @@
 
 sudo yum install wget -y
 
-sudo wget --no-check-certificate https://github.com/youchanlee/ssr/blob/master/ssr.sh
+sudo wget --no-check-certificate https://raw.githubusercontent.com/youchanlee/ssr/master/ssr.sh
 
 sudo chmod +x ssr.sh
 
