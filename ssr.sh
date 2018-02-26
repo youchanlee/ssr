@@ -2,22 +2,24 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #=================================================================#
-#   系统需求:  CentOS 6,7, Debian, Ubuntu                  #
-#   描述:   ShadowsocksR 服务器一键端            #
+#   System Required:  CentOS 6,7, Debian, Ubuntu                  #
+#   Description: One click Install ShadowsocksR Server            #
+#   Author: nobody                                                #
+#   Thanks:                                                       #
 #=================================================================#
 
 clear
 echo
 echo "#############################################################"
-echo "# ShadowsocksR 服务器一键端                     #"
-echo "# Intro: https://github.com/youchanlee/ssr                      #"
-echo "#                          #"
-echo "# Github: https://github.com/youchanlee/ssr      #"
+echo "# One click Install ShadowsocksR Server                     #"
+echo "# Intro: https://shadowsocks.be/9.html                      #"
+echo "# Author: Teddysun <i@teddysun.com>                         #"
+echo "# Github: https://github.com/shadowsocksr/shadowsocksr      #"
 echo "#############################################################"
 echo
 
 libsodium_file="libsodium-1.0.16"
-libsodium_url="https://github.com/youchanlee/youchanlee.github.io/blob/master/libsodium-1.0.16.tar.gz"
+libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
 
 #Current folder
 cur_dir=`pwd`
@@ -189,9 +191,9 @@ pre_install(){
         exit 1
     fi
     # Set ShadowsocksR config password
-    echo "请输入密码:"
-    read -p "(默认密码: zhongxin):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="zhongxin"
+    echo "Please enter password for ShadowsocksR:"
+    read -p "(Default password: teddysun.com):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -201,8 +203,8 @@ pre_install(){
     while true
     do
     dport=$(shuf -i 9000-19999 -n 1)
-    echo -e "请输入ShadowsocksR的端口 [1-65535]"
-    read -p "(默认端口: ${dport}):" shadowsocksport
+    echo -e "Please enter a port for ShadowsocksR [1-65535]"
+    read -p "(Default port: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
@@ -303,7 +305,7 @@ pre_install(){
     done
 
     echo
-    echo "按任意键开始安装，按Ctrl+C取消安装"
+    echo "Press any key to start...or Press Ctrl+C to cancel"
     char=`get_char`
     # Install necessary dependencies
     if check_sys packageManager yum; then
@@ -323,7 +325,7 @@ download_files(){
         exit 1
     fi
     # Download ShadowsocksR file
-    if ! wget --no-check-certificate -O shadowsocksr-3.2.1.tar.gz https://github.com/youchanlee/ssr/blob/master/shadowsocksr-3.2.1.tar.gz; then
+    if ! wget --no-check-certificate -O shadowsocksr-3.2.1.tar.gz https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.1.tar.gz; then
         echo -e "[${red}Error${plain}] Failed to download ShadowsocksR file!"
         exit 1
     fi
@@ -428,18 +430,19 @@ install(){
 
         clear
         echo
-        echo -e "恭喜，ShadowsocksR安装成功!"
-        echo -e "IP地址        : \033[41;37m $(get_ip) \033[0m"
-        echo -e "服务器端口      : \033[41;37m ${shadowsocksport} \033[0m"
-        echo -e "密码         : \033[41;37m ${shadowsockspwd} \033[0m"
-        echo -e "协议         : \033[41;37m ${shadowsockprotocol} \033[0m"
-        echo -e "混淆             : \033[41;37m ${shadowsockobfs} \033[0m"
-        echo -e "加密: \033[41;37m ${shadowsockscipher} \033[0m"
+        echo -e "Congratulations, ShadowsocksR server install completed!"
+        echo -e "Your Server IP        : \033[41;37m $(get_ip) \033[0m"
+        echo -e "Your Server Port      : \033[41;37m ${shadowsocksport} \033[0m"
+        echo -e "Your Password         : \033[41;37m ${shadowsockspwd} \033[0m"
+        echo -e "Your Protocol         : \033[41;37m ${shadowsockprotocol} \033[0m"
+        echo -e "Your obfs             : \033[41;37m ${shadowsockobfs} \033[0m"
+        echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
         echo
-        
+        echo "Welcome to visit:https://shadowsocks.be/9.html"
+        echo "Enjoy it!"
         echo
     else
-        echo "ShadowsocksR 安装失败"
+        echo "ShadowsocksR install failed, please Email to Teddysun <i@teddysun.com> and contact"
         install_cleanup
         exit 1
     fi
@@ -454,7 +457,7 @@ install_cleanup(){
 
 # Uninstall ShadowsocksR
 uninstall_shadowsocksr(){
-    printf "确定要卸载 ShadowsocksR? (y/n)"
+    printf "Are you sure uninstall ShadowsocksR? (y/n)"
     printf "\n"
     read -p "(Default: n):" answer
     [ -z ${answer} ] && answer="n"
@@ -472,10 +475,10 @@ uninstall_shadowsocksr(){
         rm -f /etc/init.d/shadowsocks
         rm -f /var/log/shadowsocks.log
         rm -rf /usr/local/shadowsocks
-        echo "ShadowsocksR 卸载成功!"
+        echo "ShadowsocksR uninstall success!"
     else
         echo
-        echo "卸载取消"
+        echo "uninstall cancelled, nothing to do..."
         echo
     fi
 }
