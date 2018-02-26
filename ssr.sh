@@ -11,10 +11,10 @@ export PATH
 clear
 echo
 echo "#############################################################"
-echo "# One click Install ShadowsocksR Server                     #"
-echo "# Intro: https://shadowsocks.be/9.html                      #"
-echo "# Author: Teddysun <i@teddysun.com>                         #"
-echo "# Github: https://github.com/shadowsocksr/shadowsocksr      #"
+echo "# SSR一键安装脚本                                           #"
+echo "# Intro: https://github.com/youchanlee/ssr                  #"
+echo "# Author: youchanlee                                        #"
+echo "# Github: https://github.com/youchanlee/ssr                 #"
 echo "#############################################################"
 echo
 
