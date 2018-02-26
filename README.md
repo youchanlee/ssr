@@ -8,7 +8,7 @@ sudo wget --no-check-certificate https://raw.githubusercontent.com/youchanlee/ss
 
 sudo chmod +x ssr.sh
 
-sudo ./ssr.sh 2>&1 | tee ssr.log
+sudo ./ssr.sh
 
 安装完成后，脚本提示如下：
 
