@@ -3,11 +3,11 @@
 使用root用户登录，运行以下命令：
 
 
-wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+wget --no-check-certificate https://github.com/youchanlee/ssr/blob/master/ssr.sh
 
-chmod +x shadowsocksR.sh
+chmod +x ssr.sh
 
-./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+./ssr.sh 2>&1 | tee ssr.log
 
 安装完成后，脚本提示如下：
 
@@ -27,7 +27,7 @@ Your obfs             :your_obfs
 Your Encryption Method:your_encryption_method
 
 
-Welcome to visit:https://shadowsocks.be/9.html
+Welcome to visit:https://github.com/youchanlee/ssr
 
 Enjoy it!
 
