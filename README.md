@@ -1,13 +1,13 @@
 使用方法：
 
 使用root用户登录，运行以下命令：
+sudo yum install wget -y
 
+sudo wget --no-check-certificate https://github.com/youchanlee/ssr/blob/master/ssr.sh
 
-wget --no-check-certificate https://github.com/youchanlee/ssr/blob/master/ssr.sh
+sudo chmod +x ssr.sh
 
-chmod +x ssr.sh
-
-./ssr.sh 2>&1 | tee ssr.log
+sudo ./ssr.sh 2>&1 | tee ssr.log
 
 安装完成后，脚本提示如下：
 
