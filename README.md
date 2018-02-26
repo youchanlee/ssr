@@ -1,6 +1,7 @@
 使用方法：
 
 使用root用户登录，运行以下命令：
+
 sudo yum install wget -y
 
 sudo wget --no-check-certificate https://github.com/youchanlee/ssr/blob/master/ssr.sh
