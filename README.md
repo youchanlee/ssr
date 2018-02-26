@@ -1,6 +1,6 @@
 使用方法：
 
-使用root用户登录，运行以下命令：
+使用root用户（可不加sudo）或者普通用户运行以下命令：
 
 sudo yum install wget -y
 
