@@ -188,7 +188,7 @@ pre_install(){
     fi
     # Set ShadowsocksR config password
     echo "请设置密码:"
-    read -p "(Default password: P080nb3m8Gg):" shadowsockspwd
+    read -p "(默认密码: P080nb3m8Gg):" shadowsockspwd
     [ -z "${shadowsockspwd}" ] && shadowsockspwd="P080nb3m8Gg"
     echo
     echo "---------------------------"
@@ -200,7 +200,7 @@ pre_install(){
     do
     dport=$(shuf -i 9000-19999 -n 1)
     echo -e "请选择端口 [1-65535]"
-    read -p "(Default port: ${dport}):" shadowsocksport
+    read -p "(默认端口: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
