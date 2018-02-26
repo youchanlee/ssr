@@ -2,10 +2,12 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #=================================================================#
-#   系统需求:  CentOS 6,7, Debian, Ubuntu                         #
-#   介绍: SSR一键安装脚本                                         #
+#   System Required:  CentOS 6,7, Debian, Ubuntu                  #
+#   Description: One click Install ShadowsocksR Server            #
+#   Author: Teddysun <i@teddysun.com>                             #
+#   Thanks: @breakwa11 <https://twitter.com/breakwa11>            #
+#   Intro:  https://shadowsocks.be/9.html                         #
 #=================================================================#
-
 clear
 echo
 echo "#############################################################"
